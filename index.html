@@ -1,0 +1,99 @@
+<!DOCTYPE html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>YouTube Api Example</title>
+    <meta
+      name="description"
+      content="A single page example of using the YouTube API to create a custom video page. Written by Paul Randall."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://kit.fontawesome.com/238dea121a.js"></script>
+  </head>
+  <body>
+    <div id="grid">
+      <header class="grid__item">
+        <div id="logo">
+          <img src="yt-logo.png" alt="YouTube Logo" />
+        </div>
+        <h1>API Example</h1>
+        <form id="search">
+          <label for="search__input"></label>
+          <input
+            aria-label="Search"
+            type="text"
+            name="search_input"
+            required
+            pattern=".*\S+.*"
+            message="Enter something"
+            id="search__input"
+            placeholder="search"
+          />
+          <button type="submit" id="search__btn">search</button>
+        </form>
+      </header>
+      <main>
+        <div id="player" class="grid__item"></div>
+        <div id="controls" class="grid__item">
+          <div id="prev" class="fas fa-arrow-left"> previous</div>
+          <div id="next">next <span class="fas fa-arrow-right"></span></div>
+        </div>
+      </main>
+      <div id="statistics" class="grid__item"></div>
+      <div id="desc" class="grid__item"></div>
+      <div id="playlist" class="grid__item"></div>
+      <footer class="grid__item">
+        <p>
+          made by<a
+            href="https://www.pauldavidrandall.com"
+            target="new_window"
+            rel="noreferrer"
+          >
+            paul randall</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-3.3.1.min.js"><\/script>'
+        );
+    </script>
+    <script src="js/main.js"></script>
+    <!-- YouTube API init -->
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function() {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga("create", "UA-XXXXX-Y", "auto");
+      ga("set", "transport", "beacon");
+      ga("send", "pageview");
+    </script>
+  </body>
+</html>
